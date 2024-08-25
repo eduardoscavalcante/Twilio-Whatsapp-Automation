@@ -25,18 +25,39 @@ Este projeto demonstra como automatizar o envio de mensagens no WhatsApp usando 
    cd twilio-whatsapp-automation
 
 2. Crie e ative o ambiente virtual:
+   ```bash
    python3 -m venv venv
    source venv/bin/activate
 
 3. Instale as dependências:
-   ```pip install -r requirements.txt
+   ```bash
+   pip install -r requirements.txt
 
 4. Configure as variáveis de ambiente:
-   ```cp .env.example .env
+   ```bash
+   cp .env.example .env
 Preencha o arquivo .env com suas credenciais do Twilio.
 
 ## Uso
 Para enviar uma mensagem de teste:
-```python src/main.py
+   ```bash
+   python src/main.py
 
+## Explicação do main.py:
+Carregamento de Variáveis de Ambiente:
 
+As credenciais do Twilio (TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, e TWILIO_PHONE_NUMBER) são carregadas a partir de um arquivo .env usando a biblioteca dotenv.
+Inicialização do Cliente Twilio:
+
+Um cliente Twilio é criado para facilitar o envio de mensagens.
+Função send_whatsapp_message:
+
+Esta função recebe dois parâmetros (to e message) e envia uma mensagem via WhatsApp utilizando a API do Twilio.
+A função retorna um dicionário com o status da operação (success ou failed) e o sid da mensagem ou uma mensagem de erro.
+Função main:
+
+A função principal prepara uma lista de destinatários e mensagens.
+Para cada destinatário, a função send_whatsapp_message é chamada, e o resultado é exibido no console.
+Execução:
+
+O código dentro de if __name__ == "__main__": garante que a função main() seja chamada apenas quando o arquivo é executado diretamente, e não quando importado como módulo.
