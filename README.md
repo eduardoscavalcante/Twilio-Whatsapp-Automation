@@ -17,6 +17,25 @@ Este projeto demonstra como automatizar o envio de mensagens no WhatsApp usando 
 - Suporte a múltiplos destinatários.
 - Integração fácil com sistemas existentes.
 
+Explicação do main.py:
+
+- Carregamento de Variáveis de Ambiente:
+As credenciais do Twilio (TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, e TWILIO_PHONE_NUMBER) são carregadas a partir de um arquivo .env usando a biblioteca dotenv.
+
+- Inicialização do Cliente Twilio:
+Um cliente Twilio é criado para facilitar o envio de mensagens.
+
+- Função send_whatsapp_message:
+Esta função recebe dois parâmetros (to e message) e envia uma mensagem via WhatsApp utilizando a API do Twilio.
+A função retorna um dicionário com o status da operação (success ou failed) e o sid da mensagem ou uma mensagem de erro.
+
+### Função main:
+A função principal prepara uma lista de destinatários e mensagens.
+Para cada destinatário, a função send_whatsapp_message é chamada, e o resultado é exibido no console.
+
+- Execução:
+O código dentro de if __name__ == "__main__": garante que a função main() seja chamada apenas quando o arquivo é executado diretamente, e não quando importado como módulo.
+
 ## Configuração
 
 1. Clone o repositório:
@@ -42,22 +61,3 @@ Preencha o arquivo .env com suas credenciais do Twilio.
 Para enviar uma mensagem de teste:
    ```bash
    python src/main.py
-
-## Explicação do main.py:
-Carregamento de Variáveis de Ambiente:
-
-As credenciais do Twilio (TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, e TWILIO_PHONE_NUMBER) são carregadas a partir de um arquivo .env usando a biblioteca dotenv.
-Inicialização do Cliente Twilio:
-
-Um cliente Twilio é criado para facilitar o envio de mensagens.
-Função send_whatsapp_message:
-
-Esta função recebe dois parâmetros (to e message) e envia uma mensagem via WhatsApp utilizando a API do Twilio.
-A função retorna um dicionário com o status da operação (success ou failed) e o sid da mensagem ou uma mensagem de erro.
-Função main:
-
-A função principal prepara uma lista de destinatários e mensagens.
-Para cada destinatário, a função send_whatsapp_message é chamada, e o resultado é exibido no console.
-Execução:
-
-O código dentro de if __name__ == "__main__": garante que a função main() seja chamada apenas quando o arquivo é executado diretamente, e não quando importado como módulo.
