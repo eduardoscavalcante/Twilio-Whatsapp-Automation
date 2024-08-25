@@ -2,7 +2,6 @@
 
 [![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/downloads/release/python-380/)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
-[![Build Status](https://github.com/seuusuario/twilio-whatsapp-automation/workflows/CI/badge.svg)](https://github.com/seuusuario/twilio-whatsapp-automation/actions)
 
 ## Tabela de Conteúdos
 1. [Sobre o Projeto](#sobre-o-projeto)
